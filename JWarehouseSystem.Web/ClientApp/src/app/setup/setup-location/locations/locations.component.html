@@ -1,0 +1,163 @@
+<div class="row">
+  <div class="col-sm-12 hidden">
+    <app-card cardTitle="Locations Summary" [options]="false">
+      <div class="row">
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>{{ locationData.length }}</h3>
+          <span class="">Total Countries</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-success">Acceptable Geo-location</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">UnAcceptable Geo-location</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-info">Active Countries</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">Inactive Countries</span>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <h3>1</h3>
+          <span class="text-primary">Customers Logged In Today</span>
+        </div>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="col-sm-12 btn-page">
+    <app-card [hidHeader]="true" cardClass="card-datatable">
+      <div class="row align-items-center m-l-0">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 text-right">
+          <button
+            class="btn btn-primary btn-sm btn-round has-ripple"
+            (click)="open(locationModal, 0)"
+          >
+            <i class="feather icon-plus"></i> New Location
+          </button>
+        </div>
+      </div>
+      <!--table-->
+      <div class="table-responsive">
+        <table
+          datatable
+          id="location-table"
+          class="table table-striped table-hover table-condensed mb-0"
+        >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Location</th>
+              <th>Region</th>
+              <th>Description</th>
+              <th>Date Modified</th>
+              <th>Modified By</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let location of locationData; index as i">
+              <td>
+                <strong>{{ i + 1 }}</strong>
+              </td>
+              <td>{{ location.name }}</td>
+              <td><strong> {{ location.region.name }}</strong></td>
+              <td>{{ location.description }}</td>
+              <td>{{ location.modifiedOn | date: "dd/mm/yyyy hh:MM:ss" }}</td>
+              <td>
+                {{
+                  location.modifiedBy.lastName +
+                    " " +
+                    location.modifiedBy.firstName
+                }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-primary btn-sm rounded"
+                  title="edit"
+                  (click)="open(locationModal, location.id)" >
+                  <i class="fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded m-2"  title="delete location" (click)="deleteLocation(location.id,location)">
+                 
+                  <i class="fa fa-times"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    </app-card>
+  </div>
+</div>
+
+<ng-template #locationModal let-modal>
+  <form [formGroup]="locationForm">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{ modalHeader }}</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="app-modal-body bg-muted px-3">
+     <div class="form-group row pt-3">
+      <label  for="locationName" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="locationName"
+          class="form-control form-control-sm"
+          placeholder="location name..."
+          formControlName="Name"
+          [ngClass]="{'is-invalid': !Name.valid && (Name.dirty || Name.touched) }"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label       
+        for="locationCode"
+        class="col-sm-3 col-form-label col-form-label-sm">Region</label>
+      <div class="col-sm-9">
+        <select  id="locationRegion" class="custom-select" formControlName="Region"   
+        [ngClass]="{'is-invalid': !Region.valid && (Region.dirty || Region.touched) }">
+          <option selected>Select region</option>
+          <option *ngFor="let region of lookupRegions" [value]="region.id">
+            {{region.name}}
+          </option>
+        </select>
+   
+      </div>
+    </div>
+    <div class="form-group row">
+      <label       
+        for="locationCode"
+        class="col-sm-3 col-form-label col-form-label-sm">Description</label>
+      <div class="col-sm-9">
+        <textarea         
+        id="locationDescription"
+        class="form-control form-control-sm"
+        placeholder="description..."
+        formControlName="Description"
+        [ngClass]="{'is-invalid': !Description.valid && (Description.dirty || Description.touched) }"> </textarea>
+       
+      </div>
+    </div>
+  </div>
+ <div class="app-modal-footer px-2">
+      <button  type="button" class="btn btn-danger rounded" autofocus="" data-dismiss="modal" (click)="modal.close('Save click')"> Close </button>
+      <button type="button" class="btn btn-primary rounded m-2" [disabled]="!locationForm.valid"  (click)="submitForm(locationForm.valid)"> Save </button>
+    </div>
+  </form>
+</ng-template>

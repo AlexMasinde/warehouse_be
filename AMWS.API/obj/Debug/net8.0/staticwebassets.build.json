@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iL4O/Ve0GfadcSE+xyZ6RPVHpNrFGOM4cAJCN9fcdqk=",
+  "Source": "AWMS.API",
+  "BasePath": "_content/AWMS.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

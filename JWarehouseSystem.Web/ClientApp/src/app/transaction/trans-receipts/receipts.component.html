@@ -1,0 +1,111 @@
+<div class="row">
+  <div class="col-sm-12">
+    <app-card cardTitle="Goods Receipt Summary" [options]="false">
+      <div class="row">
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>{{sampleData.length}}</h3>
+          <span class="">Total Receipts</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-success">Active Orders</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">Inactive Orders</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-info">Active Customers</span>
+        </div>
+        <div class="col-md-2  col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">Inactive Customers</span>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <h3>1</h3>
+          <span class="text-primary">Customers Logged In Today</span>
+        </div>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="col-sm-12 btn-page">
+    <app-card [hidHeader]="true" cardClass="card-datatable">
+      <div class="row align-items-center m-l-0">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 text-right">
+          <button class="btn btn-primary btn-sm btn-round has-ripple" (click)="myPersistenceModal.show()"><i class="feather icon-plus"></i> New Receipt</button>
+        </div>
+
+      </div>
+      <!--table-->
+      <div class="table-responsive">
+        <table datatable id="order-table" class="table table-striped table-hover table-sm mb-0">
+          <thead>
+            <tr>
+              <th>Order No.</th>
+              <th>Order Type</th>
+              <th>Authorized By</th>
+              <th>Customer PO</th>
+              <th>Customer</th>
+              <th>Sales Person</th>
+              <th>Order Date</th>
+              <th>QuoteNumber</th>
+              <th>CreditCard Number</th>
+              <th>Ship To Address</th>
+              <th>Invoice To Address</th>
+              <th>Status</th>
+              <th>Customer Number</th>
+              <th>Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let order of sampleData; index as i">
+              <td>OR{{i+3}}{{i*2}}N</td>
+              <td>Order Type</td>
+              <td>{{order.position}}</td>
+              <td>PO{{i+3}}c{{i*2}}A</td>
+              <td>{{order.name}}</td>
+              <td>Sales Person</td>
+              <td>{{order.date}}</td>
+              <td>VC{{i+3}}6g{{i*2}}J</td>
+              <td>Card-{{i+3}}-{{i*2}}-990</td>
+              <td>{{addressTo[i].country}}</td>
+              <td>{{order.office}}</td>
+              <td>{{getstatus(i)}}</td>
+              <td>{{order.age}}</td>
+              <td>{{order.salary}}</td>
+              <td>
+                <button class="btn btn-outline-primary btn-sm rounded"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-outline-danger btn-sm rounded m-2"><i class="fa fa-times"></i> </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot>
+
+          </tfoot>
+        </table>
+      </div>
+    </app-card>
+  </div>
+
+</div>
+
+<form novalidate>
+  <app-ui-modal #myPersistenceModal [containerClick]="false" [dialogClass]="'modal-lg'">
+    <div class="app-modal-header">
+      <h5 class="modal-title">New Order...</h5>
+      <button type="button" class="close basic-close" data-dismiss="modal" aria-label="Close" (click)="myPersistenceModal.hide()"><span aria-hidden="true">&times;</span></button>
+    </div>
+    <div class="app-modal-body bg-muted">
+      <app-receipt-edit></app-receipt-edit>
+    </div>
+
+    <div class="app-modal-footer">
+      <button type="button" class="btn btn-danger rounded" data-dismiss="modal" (click)="myPersistenceModal.hide()">Close</button>
+      <button type="button" class="btn btn-primary rounded m-2">Submit</button>
+    </div>
+  </app-ui-modal>
+</form>

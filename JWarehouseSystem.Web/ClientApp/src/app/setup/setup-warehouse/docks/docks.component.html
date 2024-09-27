@@ -1,0 +1,252 @@
+<div class="row">
+  <div class="col-sm-12 hidden">
+    <app-card cardTitle="Docks Summary" [options]="false">
+      <div class="row">
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>{{ dockData.length }}</h3>
+          <span class="">Total Docks</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-success">Acceptable Geo-dock</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">UnAcceptable Geo-dock</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>12</h3>
+          <span class="text-info">Active Countries</span>
+        </div>
+        <div class="col-md-2 col-xs-6 border-right">
+          <h3>0</h3>
+          <span class="text-danger">Inactive Countries</span>
+        </div>
+        <div class="col-md-2 col-xs-6">
+          <h3>1</h3>
+          <span class="text-primary">Customers Logged In Today</span>
+        </div>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="col-sm-12 btn-page">
+    <app-card [hidHeader]="true" cardClass="card-datatable">
+      <div class="row align-items-center m-l-0">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 text-right">
+          <button
+            class="btn btn-primary btn-sm btn-round has-ripple"
+            (click)="open(dockModal, 0)"
+          >
+            <i class="feather icon-plus"></i> New Dock
+          </button>
+        </div>
+      </div>
+      <!--table-->
+      <div class="table-responsive">
+        <table
+          datatable
+          id="dock-table"
+          class="table table-striped table-hover table-condensed mb-0"
+        >
+          <thead>
+            <tr>
+              <th></th>
+              <th>Dock Name</th>
+              <th>Dock Type</th>
+              <th>Location</th>
+              <th>Position</th>
+              <th>Size</th>
+              <th>Warehouse</th>
+              <th>Description</th>
+              <th>Active</th>
+              <th>Date Modified</th>
+              <th>Modified By</th>
+
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dock of dockData; index as i">
+              <td>
+                <strong>{{ i + 1 }}</strong>
+              </td>
+             <td>{{ dock.dockName }}</td>
+              <td>{{ dock.dockType }}</td>
+              <td>{{ dock.location }}</td>
+              <td>{{ dock.position }}</td>
+              <td>{{ dock.size }}</td>
+              <td>{{ dock.warehouse.name }}</td>
+              <td>{{ dock.description }}</td>
+              <td>{{ dock.isActive }}</td>
+              <td class="small">{{ dock.modifiedOn | date: "medium" }}</td>
+              <td class="small">
+                {{
+                  dock.modifiedBy.lastName +
+                    " " +
+                    dock.modifiedBy.firstName
+                }}
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-primary btn-sm rounded "
+                  title="edit"
+                  (click)="open(dockModal, dock.id)" >
+                  <i class="fa fa-pencil"></i>
+                </button>
+                <button class="btn btn-outline-danger btn-sm rounded m-2 "  title="delete dock" (click)="deleteDock(dock.id,dock)">
+                 
+                  <i class="fa fa-times"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+    </app-card>
+  </div>
+</div>
+
+<ng-template #dockModal let-modal>
+  <form [formGroup]="dockForm">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{ modalHeader }}</h4>
+      <button
+        type="button"
+        class="close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')" >
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="app-modal-body bg-muted px-3">
+      <div class="form-group row pt-3">
+        <label  for="dockCode" class="col-sm-3 col-form-label col-form-label-sm">Name</label>
+        <div class="col-sm-9">
+          <input         
+            type="text"
+            id="dockName"
+            class="form-control form-control-sm"
+            placeholder="dock name..."
+            formControlName="Name"
+            [ngClass]="{'is-invalid': !Name.valid && (Name.dirty || Name.touched) }"
+          />
+        </div>
+      </div>
+     <div class="form-group row pt-3">
+      <label  for="dockName" class="col-sm-3 col-form-label col-form-label-sm">Type</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="dockType"
+          class="form-control form-control-sm"
+          placeholder="dock type..."
+          formControlName="DockType"
+          [ngClass]="{'is-invalid': !DockType.valid && (DockType.dirty || DockType.touched) }"
+        />
+      </div>
+    </div>
+    <div class="form-group row pt-3">
+      <label  for="dockWarehouse" class="col-sm-3 col-form-label col-form-label-sm">Warehouse</label>
+      <div class="col-sm-9">
+        <select  id="dockWarehouse" class="form-control form-control-sm" formControlName="Warehouse" [(ngModel)]="selectedWarehouseId" 
+        [ngClass]="{'is-invalid': !Warehouse.valid && (Warehouse.dirty || Warehouse.touched) }"
+        (change)="warehouseChanged($event.target.value)" >
+           <option [value]="null"></option>
+          <option *ngFor="let warehouse of lookupWarehouses" [value]="warehouse.id">
+            {{warehouse.name}}
+          </option>
+        </select>
+      </div>
+    </div>
+   <!--  <div class="form-group row pt-3">
+      <label  for="dockWarehouse" class="col-sm-3 col-form-label col-form-label-sm">Warehouse(2)</label>
+      <div class="col-sm-9">
+        <ng-select [items]="lookupWarehouses"
+              class="form-control form-control-sm "
+              bindLabel="name"
+              bindValue="id"
+              [(ngModel)]="selectedWarehouseId"  
+             
+              formControlName="Warehouse"
+              [ngClass]="{'is-invalid': !Warehouse.valid && (Warehouse.dirty || Warehouse.touched) }"
+              required
+              >
+        </ng-select>
+      </div>
+    </div> -->
+    <div class="form-group row pt-3">
+      <label  for="dockLocation" class="col-sm-3 col-form-label col-form-label-sm">Location</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="dockLocation"
+          class="form-control form-control-sm"
+          placeholder="dock location..."
+          formControlName="Location"
+          [ngClass]="{'is-invalid': !Location.valid && (Location.dirty || Location.touched) }"
+        />
+      </div>
+    </div>
+    <div class="form-group row pt-3">
+      <label  for="dockPosition" class="col-sm-3 col-form-label col-form-label-sm">Position</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="dockPosition"
+          class="form-control form-control-sm"
+          placeholder="dock position..."
+          formControlName="Position"
+          [ngClass]="{'is-invalid': !Position.valid && (Position.dirty || Position.touched) }"
+        />
+      </div>
+    </div>
+    <div class="form-group row pt-3">
+      <label  for="dockSize" class="col-sm-3 col-form-label col-form-label-sm">Dock Size</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="dockSize"
+          class="form-control form-control-sm"
+          placeholder="dock size..."
+          formControlName="Size"
+          [ngClass]="{'is-invalid': !Size.valid && (Size.dirty || Size.touched) }"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label       
+        for="dockDescription"
+        class="col-sm-3 col-form-label col-form-label-sm">Description</label>
+      <div class="col-sm-9">
+        <textarea         
+        id="dockDescription"
+        class="form-control form-control-sm"
+        placeholder="other details..."
+        formControlName="Description"
+        [ngClass]="{'is-invalid': !Description.valid && (Description.dirty || Description.touched) }"> </textarea>
+      </div>
+    </div>
+    <div class="form-group row pt-3">
+      <label  for="dockIsActive" class="col-sm-3 col-form-label col-form-label-sm">Is Active</label>
+      <div class="col-sm-9">
+        <input         
+          type="text"
+          id="dockIsActive"
+          class="form-control form-control-sm"
+          placeholder="dock size..."
+          formControlName="IsActive"
+          [ngClass]="{'is-invalid': !IsActive.valid && (IsActive.dirty || IsActive.touched) }"
+        />
+      </div>
+    </div>
+
+  </div>
+ <div class="app-modal-footer px-2">
+      <button  type="button" class="btn btn-danger rounded" autofocus="" data-dismiss="modal" (click)="modal.close('Save click')"> Close </button>
+      <button type="button" class="btn btn-primary rounded m-2" [disabled]="!dockForm.valid"  (click)="submitForm(dockForm.valid)"> Save </button>
+    </div>
+  </form>
+</ng-template>

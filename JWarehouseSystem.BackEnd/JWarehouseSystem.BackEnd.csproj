@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Domain\INotificationType.cs" />
+    <Compile Remove="Interfaces\Dal\IBaseDAL.cs" />
+    <Compile Remove="Interfaces\IAddress.cs" />
+    <Compile Remove="Interfaces\IBaseDAL.cs" />
+    <Compile Remove="Interfaces\IBaseService.cs" />
+    <Compile Remove="Interfaces\ICountry.cs" />
+    <Compile Remove="Interfaces\ICustomer.cs" />
+    <Compile Remove="Interfaces\IDelivery.cs" />
+    <Compile Remove="Interfaces\IDock.cs" />
+    <Compile Remove="Interfaces\IDocking.cs" />
+    <Compile Remove="Interfaces\IDockStatus.cs" />
+    <Compile Remove="Interfaces\IDriver.cs" />
+    <Compile Remove="Interfaces\IEmployee.cs" />
+    <Compile Remove="Interfaces\IInventory.cs" />
+    <Compile Remove="Interfaces\ILocation.cs" />
+    <Compile Remove="Interfaces\INotification.cs" />
+    <Compile Remove="Interfaces\INotificationType.cs" />
+    <Compile Remove="Interfaces\IOrder.cs" />
+    <Compile Remove="Interfaces\IOrderStatus.cs" />
+    <Compile Remove="Interfaces\IPacking.cs" />
+    <Compile Remove="Interfaces\IPicking.cs" />
+    <Compile Remove="Interfaces\IProduct.cs" />
+    <Compile Remove="Interfaces\IPurchaseOrder.cs" />
+    <Compile Remove="Interfaces\IPurchaseOrderStatus.cs" />
+    <Compile Remove="Interfaces\IReceipt.cs" />
+    <Compile Remove="Interfaces\IReceiptLine.cs" />
+    <Compile Remove="Interfaces\IReceiveStock.cs" />
+    <Compile Remove="Interfaces\IRegion.cs" />
+    <Compile Remove="Interfaces\IRequestStock.cs" />
+    <Compile Remove="Interfaces\IRequestTransfer.cs" />
+    <Compile Remove="Interfaces\ISendStock.cs" />
+    <Compile Remove="Interfaces\ICarrier.cs" />
+    <Compile Remove="Interfaces\IShipping.cs" />
+    <Compile Remove="Interfaces\IStockMovement.cs" />
+    <Compile Remove="Interfaces\ISupplier.cs" />
+    <Compile Remove="Interfaces\IUser.cs" />
+    <Compile Remove="Interfaces\IWarehouse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\JWarehouseSystem.Common\JWarehouseSystem.Common.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.SqlClient">
+      <HintPath>C:\Program Files (x86)\dotnet\sdk\NuGetFallbackFolder\system.data.sqlclient\4.6.0\ref\netcoreapp2.1\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

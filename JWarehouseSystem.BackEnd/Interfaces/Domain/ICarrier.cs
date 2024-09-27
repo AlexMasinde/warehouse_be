@@ -1,0 +1,17 @@
+﻿using JWarehouseSystem.Common.Interfaces;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace JWarehouseSystem.BackEnd.Interfaces
+{
+    public interface ICarrier:IUserAudit
+    {
+        int ID { get; set; }
+        string Code { get; set; }
+        string Name { get; set; }
+        string Description { get; set; }
+        string Capacity { get; set; }
+        
+    }
+}

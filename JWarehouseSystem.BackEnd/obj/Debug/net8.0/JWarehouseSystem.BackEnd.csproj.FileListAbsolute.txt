@@ -1,0 +1,45 @@
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/CoverletSourceRootsMapping_JWarehouseSystem.BackEnd
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.deps.json
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.runtimeconfig.json
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.pdb
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.pdb
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.dll.config
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.csproj.AssemblyReference.cache
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.AssemblyInfoInputs.cache
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.AssemblyInfo.cs
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.csproj.CoreCompileInputs.cache
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehou.E0BCEBDA.Up2Date
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/refint/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.pdb
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.genruntimeconfig.cache
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/ref/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Amband/Src/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.sourcelink.json
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/CoverletSourceRootsMapping_JWarehouseSystem.BackEnd
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.visualstudio.testadapter.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.reporters.netcoreapp10.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/xunit.runner.utility.netcoreapp10.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.deps.json
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.runtimeconfig.json
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.BackEnd.pdb
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.pdb
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/bin/Debug/net8.0/JWarehouseSystem.Common.dll.config
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.csproj.AssemblyReference.cache
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.GeneratedMSBuildEditorConfig.editorconfig
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.AssemblyInfoInputs.cache
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.AssemblyInfo.cs
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.csproj.CoreCompileInputs.cache
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehou.E0BCEBDA.Up2Date
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/refint/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.pdb
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.genruntimeconfig.cache
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/ref/JWarehouseSystem.BackEnd.dll
