@@ -35,3 +35,4 @@
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.Common/obj/Debug/net8.0/JWarehouseSystem.Common.pdb
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.Common/obj/Debug/net8.0/JWarehouseSystem.Common.genruntimeconfig.cache
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.Common/obj/Debug/net8.0/ref/JWarehouseSystem.Common.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.Common/obj/Debug/net8.0/JWarehouseSystem.Common.sourcelink.json

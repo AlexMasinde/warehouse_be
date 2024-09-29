@@ -43,3 +43,4 @@
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.pdb
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.genruntimeconfig.cache
 /Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/ref/JWarehouseSystem.BackEnd.dll
+/Users/alexmasinde/Desktop/Warehouse BE/JWarehouseSystem.BackEnd/obj/Debug/net8.0/JWarehouseSystem.BackEnd.sourcelink.json

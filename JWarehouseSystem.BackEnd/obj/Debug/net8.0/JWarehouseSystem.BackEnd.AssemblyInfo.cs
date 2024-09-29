@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JWarehouseSystem.BackEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+616a5a915d9d362408a78ff8e19a9bf755d4bb5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("JWarehouseSystem.BackEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JWarehouseSystem.BackEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

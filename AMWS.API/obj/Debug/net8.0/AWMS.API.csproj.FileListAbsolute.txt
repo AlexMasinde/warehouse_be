@@ -575,3 +575,4 @@
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.pdb
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.genruntimeconfig.cache
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/ref/AWMS.API.dll
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.sourcelink.json
