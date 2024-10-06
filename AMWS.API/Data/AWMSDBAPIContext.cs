@@ -23,7 +23,8 @@ namespace AWMS.API.Data
         public DbSet<Order> Order { get; set; }
         public DbSet<CustomerAddress> CustomerAddress { get; set; }
         public DbSet<CompanyAddress> CompanyAddress { get; set; }
-
+        public DbSet<Company> Company { get; set; }
+        public DbSet<Contact> Contact { get; set; }
         public DbSet<SupplierAddress> SupplierAddress { get; set; }
         public DbSet<Currency> Currency { get; set; }
         public DbSet<Customer> Customer { get; set; }

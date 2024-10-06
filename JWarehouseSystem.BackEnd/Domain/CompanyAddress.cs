@@ -23,7 +23,7 @@ namespace JWarehouseSystem.BackEnd.Domain
 
         public string Address { get; set; }
         public int CreatedByID { get; set; }
-         [ForeignKey("CreatedByID")]
+        [ForeignKey("CreatedByID")]
         public User CreatedBy { get; set; }
         public DateTime CreateOn { get; set; }
         public int ModifiedByID { get; set; }
@@ -31,6 +31,6 @@ namespace JWarehouseSystem.BackEnd.Domain
         public User ModifiedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
         public string Contact { get; set; }
-        public string Code { get ; set; }
+        public string Code { get; set; }
     }
 }

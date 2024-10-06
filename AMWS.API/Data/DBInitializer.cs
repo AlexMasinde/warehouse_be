@@ -24,6 +24,13 @@ namespace AWMS.API.Data
             InitialDataAddresses.Initialize(context);
             InitialDataArea.Initialize(context);
             InitialDataAreaPurpose.Initialize(context);
+            InitialDataContact.Initialize(context);
+            InitialDataCompany.Initialize(context);
+            InitialDataDelivery.Initialize(context);
+            InitialDataCompanyAddress.Initialize(context);
+            InitialDataPurchaseOrder.Initialize(context);
+            InitialDataReceiptLine.Initialize(context);
+            InitialDataReceipt.Initialize(context);
 
             //Look for any Orders then create
             if (!context.Order.Any())
@@ -58,10 +65,10 @@ namespace AWMS.API.Data
                     SalesPerson = "Linda Sango",
                     OrderDate = DateTime.Now,
                     QuoteNumber = "Qa00224",
-                    ShipToAddressID = 2,
-                    InvoiceToAddressID = 2,
+                    ShipToAddressID = 1,
+                    InvoiceToAddressID = 1,
                     CreditCardNumber = "EQX066445558",
-                    OrderStatusID = 6,
+                    OrderStatusID = 2,
                     CustomerNumber = "0002",
                     Price = 3600000,
                     ModifiedByID = 1,
