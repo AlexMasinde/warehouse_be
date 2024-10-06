@@ -11,21 +11,19 @@ namespace AWMS.API.Data
     {
         public static void Initialize(AWMSAPIDBContext context)
         {
-            if (!context.Company.Any())
 
+            var company = new Company()
             {
-                var company = new Company()
-                {
-                    Name = "Company A",
-                    ContactID = 1,
-                    ModifiedByID = 1,
-                    CreatedByID = 1,
-                    ModifiedOn = DateTime.Now,
-                    CreateOn = DateTime.Now
-                };
-                context.Company.Add(company);
-                context.SaveChanges();
-            }
+                Name = "Company A",
+                ContactID = 1,
+                ModifiedByID = 1,
+                CreatedByID = 1,
+                ModifiedOn = DateTime.Now,
+                CreateOn = DateTime.Now
+            };
+            context.Company.Add(company);
+            context.SaveChanges();
+
         }
     }
 }
