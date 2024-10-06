@@ -14,7 +14,7 @@ namespace AWMS.API.Data
 
             var company = new Company()
             {
-                Name = "Company A",
+                Name = "Company B",
                 ContactID = 1,
                 ModifiedByID = 1,
                 CreatedByID = 1,

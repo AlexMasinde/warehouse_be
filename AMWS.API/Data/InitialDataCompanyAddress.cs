@@ -21,7 +21,7 @@ namespace AWMS.API.Data
                         {
                             new CompanyAddress
                             {
-                                CompanyID = 1,
+                                CompanyID = 2,
                                 CountryID = 1,
                                 CityID = 1,
                                 Address = "123 Main St, City A",
@@ -34,7 +34,7 @@ namespace AWMS.API.Data
                             },
                             new CompanyAddress
                             {
-                                CompanyID = 1,
+                                CompanyID = 3,
                                 CountryID = 1,
                                 CityID = 1,
                                 Address = "456 Elm St, City B",
