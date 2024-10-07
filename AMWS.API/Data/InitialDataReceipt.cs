@@ -21,7 +21,7 @@ namespace AWMS.API.Data
                         {
                             new Receipt
                             {
-                                PurchaseOrderID = 1,  // Ensure this exists in the PurchaseOrder table
+                                PurchaseOrderID = 2,  // Ensure this exists in the PurchaseOrder table
                                 Quantity = 100,
                                 GoodsStatus = "Accepted",
                                 ReceivedByID = 1, // Ensure this Employee exists
@@ -36,7 +36,7 @@ namespace AWMS.API.Data
                             },
                             new Receipt
                             {
-                                PurchaseOrderID = 1,  // Ensure this exists in the PurchaseOrder table
+                                PurchaseOrderID = 3,  // Ensure this exists in the PurchaseOrder table
                                 Quantity = 50,
                                 GoodsStatus = "Rejected",
                                 ReceivedByID = 1, // Ensure this Employee exists
