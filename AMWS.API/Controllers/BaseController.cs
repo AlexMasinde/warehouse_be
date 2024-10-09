@@ -15,19 +15,25 @@ namespace AWMS.API.Controllers
     {
         private readonly AWMSAPIDBContext context;
         public IConfiguration Configuration { get; }
+
         public BaseController(AWMSAPIDBContext context, IConfiguration configuration)
         {
             this.context = context;
             Configuration = configuration;
         }
+
         public AWMSAPIDBContext _context => this.context;
 
+        // Add explicit HTTP method binding for Swagger to recognize
+        [HttpPost("logout")]
         public async Task<IActionResult> LogOut()
         {
             HttpContext.Session.Clear();
             await HttpContext.SignOutAsync();
             return NoContent();
         }
+
+        [NonAction]
         public virtual void SetAuditData(int id, IUserAudit audit)
         {
             if (id == 0)
@@ -39,6 +45,4 @@ namespace AWMS.API.Controllers
             audit.ModifiedOn = DateTime.Now;
         }
     }
-
-
 }

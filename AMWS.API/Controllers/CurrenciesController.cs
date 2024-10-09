@@ -16,16 +16,16 @@ namespace AWMS.API.Controllers
     [ApiController]
     public class CurrenciesController : BaseController
     {
-       
+
 
         public CurrenciesController(AWMSAPIDBContext context, IConfiguration configuration)
              : base(context, configuration)
         {
-            
+
         }
 
         //GET: api/Currencies
-       [HttpGet]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Currency>>> GetCurrency()
         {
             return await _context.Currency
@@ -38,7 +38,7 @@ namespace AWMS.API.Controllers
                 .ToListAsync();
         }
 
-     
+
         // GET: api/Currencies/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Currency>> GetCurrency(int id)
@@ -48,7 +48,7 @@ namespace AWMS.API.Controllers
                 return new Currency();
             }
             // var currency = await _context.Currency.FindAsync(id);
-            var currency = await _context.Currency.Include(c => c.ModifiedBy).Include(e=>e.CreatedBy).FirstOrDefaultAsync(o => o.ID==id);
+            var currency = await _context.Currency.Include(c => c.ModifiedBy).Include(e => e.CreatedBy).FirstOrDefaultAsync(o => o.ID == id);
 
             if (currency == null)
             {
@@ -98,7 +98,7 @@ namespace AWMS.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Currency>> PostCurrency(Currency currency)
         {
-            SetAuditData(currency.ID,currency);
+            SetAuditData(currency.ID, currency);
 
             _context.Currency.Add(currency);
             await _context.SaveChangesAsync();
@@ -126,6 +126,6 @@ namespace AWMS.API.Controllers
         {
             return _context.Currency.Any(e => e.ID == id);
         }
-       
+
     }
 }

@@ -15,32 +15,30 @@ namespace AWMS.API.Controllers
     [ApiController]
     public class AreasController : BaseController
     {
-        
-
         public AreasController(AWMSAPIDBContext context, IConfiguration configuration)
              : base(context, configuration)
         {
-            
+
         }
 
         //GET: api/Areas
-       [HttpGet]
+        [HttpGet]
         public async Task<ActionResult<IEnumerable<Area>>> GetArea()
         {
             return await _context.Area
-             
-              //  .Include(c => c.Purposes)
+
+                //  .Include(c => c.Purposes)
                 .Include(c => c.ModifiedBy)
                 .ToListAsync();
         }
 
-     
+
         // GET: api/Areas/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Area>> GetArea(int id)
         {
             // var area = await _context.Area.FindAsync(id);
-            var area = await _context.Area.Include(c => c.ModifiedBy).FirstOrDefaultAsync(o => o.ID==id);
+            var area = await _context.Area.Include(c => c.ModifiedBy).FirstOrDefaultAsync(o => o.ID == id);
             if (id == 0)
             {
                 return new Area();
@@ -94,6 +92,7 @@ namespace AWMS.API.Controllers
         [HttpPost]
         public async Task<ActionResult<Area>> PostArea(Area area)
         {
+
             SetAuditData(area.ID, area);
 
             _context.Area.Add(area);

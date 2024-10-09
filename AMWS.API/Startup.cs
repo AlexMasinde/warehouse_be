@@ -19,6 +19,10 @@ using System.Text.Json.Serialization;
 using System.Data.SqlClient;
 using Newtonsoft.Json;
 
+
+using Microsoft.OpenApi.Models;
+
+
 namespace AWMS.API
 {
     public class Startup
@@ -41,6 +45,20 @@ namespace AWMS.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //add swagger
+            services.AddSwaggerGen(
+                c =>
+                    {
+                        c.SwaggerDoc("v1", new OpenApiInfo
+                        {
+                            Version = "v1",
+                            Title = "AWMS API",
+                            Description = "API documentation for AWMS"
+                        });
+                    }
+            );
+
 
 
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -94,8 +112,8 @@ namespace AWMS.API
             //Set Database Connection string here...
             string sqlConnectionStr = Configuration.GetConnectionString("ConnStr");
             SqlConnection conn = new SqlConnection(sqlConnectionStr);
-                      
-            services.AddDbContext<AWMSAPIDBContext>(options => options.UseSqlServer(conn) );
+
+            services.AddDbContext<AWMSAPIDBContext>(options => options.UseSqlServer(conn));
 
             services.AddControllers()
                 .AddNewtonsoftJson(options =>
@@ -103,17 +121,17 @@ namespace AWMS.API
                     // Use the default property (Pascal) casing
                     options.SerializerSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
                     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-                  //  options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
+                    //  options.SerializerSettings.PreserveReferencesHandling = PreserveReferencesHandling.Objects;
                 })
                .AddJsonOptions(options =>
                {
                    options.JsonSerializerOptions.WriteIndented = true;
                    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
                    options.JsonSerializerOptions.Converters.Add(new StringToIntConverter());
-                 
-               })       
+
+               })
                ;
-           
+
 
         }
 
@@ -124,6 +142,14 @@ namespace AWMS.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "AWMS API v1");
+                c.RoutePrefix = string.Empty;
+            });
 
             app.UseCors(option =>
             option.WithOrigins(corsDomains)

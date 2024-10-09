@@ -576,3 +576,8 @@
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.genruntimeconfig.cache
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/ref/AWMS.API.dll
 /Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.sourcelink.json
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/obj/Debug/net8.0/AWMS.API.MvcApplicationPartsAssemblyInfo.cs
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/bin/Debug/net8.0/Microsoft.OpenApi.dll
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/Users/alexmasinde/Desktop/Warehouse BE/AMWS.API/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
