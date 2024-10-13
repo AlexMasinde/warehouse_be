@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AWMS.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+611c4f42b5221808177d66013640f0dca850ff8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f04f84e3edc86a65019aa000d8a3b99083d207d")]
 [assembly: System.Reflection.AssemblyProductAttribute("AWMS.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AWMS.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

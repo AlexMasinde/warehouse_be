@@ -31,6 +31,7 @@ namespace AWMS.API.Data
             InitialDataPurchaseOrder.Initialize(context);
             InitialDataReceiptLine.Initialize(context);
             InitialDataReceipt.Initialize(context);
+            InitialDataInventory.Initialize(context);
 
             //Look for any Orders then create
             if (!context.Order.Any())

@@ -23,7 +23,7 @@ namespace AWMS.API.Controllers
         }
 
         //GET: api/deliveries
-       [HttpGet]
+        [HttpGet]
         public async Task<ActionResult<PagedResult<Delivery>>> GetDelivery()
         {
             var deliveries = _context.Delivery
@@ -38,13 +38,13 @@ namespace AWMS.API.Controllers
             PagedResult<Delivery> pagedResult = await deliveries.GetPagedAsync(1, 10);
             return pagedResult;
         }
-       
+
         // GET: api/deliveries/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Delivery>> GetDelivery(int id)
         {
             // var order = await _context.Delivery.FindAsync(id);
-            var order = await _context.Delivery.Include(c => c.Customer).Include(e=>e.ReceivedBy).FirstOrDefaultAsync(o => o.ID==id);
+            var order = await _context.Delivery.Include(c => c.Customer).Include(e => e.ReceivedBy).FirstOrDefaultAsync(o => o.ID == id);
 
             if (order == null)
             {
